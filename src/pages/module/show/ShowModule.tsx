@@ -5,7 +5,7 @@ import { useLocation } from "react-router"
 // types
 import type { Module } from "../../../types/module"
 
-function MicrolessonOutput() {
+function ShowModule() {
   const location = useLocation()
   const { response } = location.state as { response: Module }
 
@@ -88,10 +88,10 @@ function MicrolessonOutput() {
 
   return (
     <main className="p-4 max-w-2xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">Microlesson Output</h1>
+      <h1 className="text-4xl font-bold mb-6">Generated Module</h1>
       <div className="space-y-4">{ledResponses}</div>
     </main>
   )
 }
 
-export default MicrolessonOutput
+export default ShowModule

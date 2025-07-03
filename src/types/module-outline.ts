@@ -1,12 +1,3 @@
-interface GenerateModuleOutline {
-  title: string
-  about: string
-  minutes: string
-  learnerPersona: string
-  learningObjectives: string[]
-  tools: string[]
-}
-
 interface Microlesson {
   id: number
   title: string
@@ -24,4 +15,4 @@ interface ModuleOutline {
   microlessons: Microlesson[]
 }
 
-export type { GenerateModuleOutline, Microlesson, ModuleOutline }
+export type { Microlesson, ModuleOutline }

@@ -7,8 +7,7 @@ import ArrayInput from "../../../components/form/ArrayInput/ArrayInput"
 import FormInput from "../../../components/form/FormInput/FormInput"
 
 // services
-import { submitModuleData } from "../../../services/module-outline"
-import { submitModuleDataCrew } from "../../../services/module"
+import { submitModuleData, submitModuleDataCrew } from "../../../services/module"
 
 // helpers
 import { tryCatch } from "../../../helpers/try-catch"
@@ -17,10 +16,10 @@ import { tryCatch } from "../../../helpers/try-catch"
 import { exampleData } from "./example-data"
 
 // types
-import type { GenerateModuleOutline as FormData } from "../../../types/module-outline"
+import type { NewModule as FormData } from "../../../types/module"
 
 // component
-function GenerateModuleOutline() {
+function NewModule() {
   const navigate = useNavigate()
   const [formData, setFormData] = useState<FormData>({
     title: "",
@@ -88,7 +87,7 @@ function GenerateModuleOutline() {
 
       console.log(response)
 
-      await navigate(`/module/output`, { state: { response } })
+      await navigate(`/module/show`, { state: { response } })
     } else {
       const [response, error] = await tryCatch(submitModuleData(submissionData))
 
@@ -100,7 +99,7 @@ function GenerateModuleOutline() {
 
       console.log(response)
 
-      await navigate(`/module-outline/edit`, { state: { response } })
+      await navigate(`/module/outline/edit`, { state: { response } })
     }
 
     setIsSubmitting(false)
@@ -260,4 +259,4 @@ function GenerateModuleOutline() {
   )
 }
 
-export default GenerateModuleOutline
+export default NewModule

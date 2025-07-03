@@ -3,18 +3,18 @@ import { useState } from "react"
 import { useLocation, useNavigate } from "react-router"
 
 // components
-import FormInput from "../../../components/form/FormInput/FormInput"
-import ArrayInput from "../../../components/form/ArrayInput/ArrayInput"
-import MicrolessonDisplay from "../../../components/form/MicrolessonDisplay/MicrolessonDisplay"
+import FormInput from "../../../../components/form/FormInput/FormInput"
+import ArrayInput from "../../../../components/form/ArrayInput/ArrayInput"
+import MicrolessonDisplay from "../../../../components/form/MicrolessonDisplay/MicrolessonDisplay"
 
 // services
-import { submitModuleOutlineData } from "../../../services/module"
+import { submitModuleOutlineData } from "../../../../services/module"
 
 // helpers
-import { tryCatch } from "../../../helpers/try-catch"
+import { tryCatch } from "../../../../helpers/try-catch"
 
 // types
-import type { ModuleOutline as FormData } from "../../../types/module-outline"
+import type { ModuleOutline as FormData } from "../../../../types/module-outline"
 
 // component
 function EditLessonOutline() {
@@ -148,7 +148,7 @@ function EditLessonOutline() {
     }
     console.log(response)
 
-    await navigate(`/module/output`, { state: { response } })
+    await navigate(`/module/show`, { state: { response } })
     setIsSubmitting(false)
   }
 

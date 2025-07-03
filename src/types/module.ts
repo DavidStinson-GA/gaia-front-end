@@ -1,3 +1,12 @@
+interface NewModule {
+  title: string
+  about: string
+  minutes: string
+  learnerPersona: string
+  learningObjectives: string[]
+  tools: string[]
+}
+
 interface Module {
   title: string
   about: string
@@ -15,4 +24,4 @@ interface Module {
   }[]
 }
 
-export type { Module }
+export type { NewModule, Module }
