@@ -54,7 +54,7 @@ const moduleOutlineSchema = z.object({
 
 async function submitModuleOutlineData(data: ModuleOutline) {
   const [response, responseError] = await tryCatch(
-    fetch(`${GA_SYSTEMS_BACK_END_URL}/api/v1/module/new`, {
+    fetch(`${GA_SYSTEMS_BACK_END_URL}/api/v1/module/generate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +88,7 @@ async function submitModuleOutlineData(data: ModuleOutline) {
 
 async function submitModuleData(data: NewModule) {
   const [response, responseError] = await tryCatch(
-    fetch(`${GA_SYSTEMS_BACK_END_URL}/api/v1/module/outline/new`, {
+    fetch(`${GA_SYSTEMS_BACK_END_URL}/api/v1/module-outline/generate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -132,7 +132,7 @@ async function submitModuleData(data: NewModule) {
 
 async function submitModuleDataCrew(data: NewModule) {
   const [response, responseError] = await tryCatch(
-    fetch(`${GA_SYSTEMS_BACK_END_URL}/api/v1/crew/module/new`, {
+    fetch(`${GA_SYSTEMS_BACK_END_URL}/api/v1/crew/generate-module`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
